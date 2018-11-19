@@ -1,0 +1,68 @@
+def feb(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    return feb(n - 1) + feb(n - 2)
+
+# # 斐波那契数列 斐氏数列
+# # 1 1 2 3 5 8 13 21 34 。。。。
+# # 求斐波那契数列中第n项的值是多少，第1项1 第2项1 第3项2
+# def feb(n):
+#     if n == 1 or n == 2:
+#         return 1
+#     return feb(n - 1) + feb(n - 2)
+#
+#
+# print(feb(40))
+
+# 1、递归，函数直接或间接的调用自己本身
+# 2、多次调用自己，会长生额外的函数调用代价
+# 3、如果想要写递归函数，需要确定两件事情
+#       3.1 大问题->小问题  递归公式 f(n)=n*f(n-1)
+#       3.2 小问题的极值是什么，何时停止递归  n=1
+# 4、递归的终止条件一定要在递归公式之前判断
+
+# # 阶乘 n>0的正整数，fun1()函数的作用就是求n的阶乘
+# def fun1(n):
+#     if n == 1:
+#         return 1
+#     return n * fun1(n - 1)
+#
+#
+# print(fun1(5))
+
+# # 水仙花数
+# # 一个三位正整数，个十百三位三次方之和等于这个数本身
+# # abc = a^3 + b^3 + c^3
+# def shui():
+#     for i in range(100, 1000):
+#         g = i % 10
+#         s = i // 10 % 10
+#         b = i // 100
+#         if i == g**3 + s**3 + b**3:
+#             print(i)
+#
+# shui()
+
+
+# # 折半查找，二分查找，数列是有序数列，单调递增（递减）数列
+# def binary_search(n, nums):
+#     low = 0
+#     high = len(nums) - 1
+#     while low <= high:
+#         mid = (low + high) // 2
+#         if n > nums[mid]:
+#             low = mid + 1
+#         elif n < nums[mid]:
+#             high = mid - 1
+#         else:
+#             break
+#     if low <= high:
+#         print("在")
+#     else:
+#         print("不在")
+#
+#
+# l1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# binary_search(88, l1)
